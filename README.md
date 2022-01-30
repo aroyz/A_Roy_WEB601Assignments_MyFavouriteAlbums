@@ -1,1 +1,5 @@
-# A_Roy_WEB601Assignments_MyFavouriteAlbums
+# My Favourite Albums
+
+Name: Abbey Roy
+Theme: My Favourite Albums
+Description: This application will list my favourite albums.
