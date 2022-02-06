@@ -1,8 +1,6 @@
-<span [innerHTML]="contentList.returnContent(0)">
-</span>
-
-<span [innerHTML]="contentList.returnContent(1)">
-</span>
-
-<span [innerHTML]="contentList.returnContent(2)">
-</span>
+<img src="{{content?.imgURL}}" *ngIf="content?.imgURL" (click)="onClick()" />
+<h1>{{content?.title}}</h1>
+<p>{{content?.creator}}</p>
+<p class="description">{{content?.description}}</p>
+<p *ngIf="content?.type">{{content?.type}}</p>
+<p *ngIf="content?.tags">{{content?.tags ? content?.tags?.join(', ') : ''}}</p>
