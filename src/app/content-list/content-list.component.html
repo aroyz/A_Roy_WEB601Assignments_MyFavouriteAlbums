@@ -1,1 +1,15 @@
-<app-content-card *ngFor="let item of contentList; first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+<div id="input-div">
+  <h1>Search Albums</h1>
+  <input #albumName><button (click)="searchEvent(albumName.value)">Search</button>
+  <p *ngIf="searchMsg" [ngClass]="getClass(searchMsg)" id="searchMsg">{{ searchMsg }}</p>
+</div>
+
+<h1>Albums</h1>
+<app-content-card class="album" *ngFor="let item of (contentList | contentTypeFilter: 'Album'); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+
+<h1>Singles</h1>
+<app-content-card class="single" *ngFor="let item of (contentList | contentTypeFilter: 'Single'); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+
+<h1>No Type</h1>
+<app-content-card class="no-type" *ngFor="let item of (contentList | contentTypeFilter); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+

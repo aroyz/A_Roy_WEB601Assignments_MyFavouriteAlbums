@@ -3,4 +3,6 @@
 <p>{{content?.creator}}</p>
 <p class="description">{{content?.description}}</p>
 <p *ngIf="content?.type">{{content?.type}}</p>
-<p *ngIf="content?.tags">{{content?.tags ? content?.tags?.join(', ') : ''}}</p>
+<ul id="tags-list" *ngIf="content?.tags">
+    <li *ngFor="let item of content?.tags">{{item}}</li>
+</ul>

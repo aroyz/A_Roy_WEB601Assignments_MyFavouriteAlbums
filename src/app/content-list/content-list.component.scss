@@ -1,1 +1,30 @@
+h1 {
+  display: block;
+  width: 100%;
+  max-width: 860px;
+  margin: 40px auto 0;
+}
+p.found {
+  color: green;
+}
+p.not-found {
+  color: red;
+}
 
+#input-div {
+  width: 100%;
+  max-width: 860px;
+  margin: 40px auto 0;
+  text-align: right;
+}
+#input-div input, button {
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+#input-div #searchMsg {
+  font-weight: 600;
+  font-family: "Arial";
+}
+#input-div h1 {
+  margin-bottom: 20px;
+}
