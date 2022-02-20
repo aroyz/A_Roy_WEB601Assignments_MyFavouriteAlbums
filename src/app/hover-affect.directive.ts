@@ -1,4 +1,5 @@
 import {Directive, ElementRef, HostListener, Input, OnInit} from '@angular/core';
+import {style} from "@angular/animations";
 
 @Directive({
   selector: '[appHoverAffect]'
@@ -15,18 +16,16 @@ export class HoverAffectDirective implements OnInit{
     if (this.el === 'type') {
       this.element.nativeElement.style.textDecoration = 'underline';
     }
-    else {
+    else if (this.el === 'tag') {
       this.element.nativeElement.style.fontWeight = 'bold';
+    }
+    else {
+      this.element.nativeElement.style.borderWidth = '4px';
     }
   }
   @HostListener('mouseleave')
   onMouseLeave() {
-    if (this.el === 'type') {
-      this.element.nativeElement.style.textDecoration = 'none';
-    }
-    else {
-      this.element.nativeElement.style.fontWeight = 'normal';
-    }
+    this.element.nativeElement.removeAttribute('style');
   }
 
   ngOnInit() {
