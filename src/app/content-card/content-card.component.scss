@@ -11,6 +11,9 @@
   p {
     margin: 5px 0px 0px;
   }
+  p.type {
+    display: inline-block;
+  }
   .description {
     font-style: italic;
   }
@@ -23,6 +26,9 @@
     padding: 10px;
     border-radius: 10px;
     margin-right: 10px;
+  }
+  img {
+    width: 220px;
   }
 }
 

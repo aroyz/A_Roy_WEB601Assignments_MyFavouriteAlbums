@@ -45,7 +45,6 @@ export class ContentListComponent implements OnInit {
         title: "Provider",
         description: "Provider is a song by American singer-songwriter Frank Ocean, released as a single on the seventh episode of Blonded Radio. Shortly after the release, Ocean released a lyric video for the song on his website, with the words on screen being highlighted by a hopping Hello Kitty head.",
         creator: "Frank Ocean",
-        imgURL: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Frank_Ocean_Provider_Cover.jpg/220px-Frank_Ocean_Provider_Cover.jpg",
         type: "Single"
       },
       {
