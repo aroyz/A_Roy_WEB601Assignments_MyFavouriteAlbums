@@ -1,26 +1,58 @@
-.album {
-  background-color: #b0b0b0;
+:host {
+  display: block;
+  max-width: 800px;
+  margin: 20px auto;
+  border: 1px dashed black;
   padding: 30px;
-  margin-bottom: 8px;
+
+  h1 {
+    margin-bottom: 8px;
+  }
+  p {
+    margin: 5px 0px 0px;
+  }
+  p.type {
+    display: inline-block;
+  }
+  .description {
+    font-style: italic;
+  }
+  #tags-list {
+    padding: 0px;
+    display: flex;
+  }
+  #tags-list li {
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  img {
+    width: 220px;
+  }
 }
 
-h2 {
-  font-family: "Arial Black";
-  font-size: 2em;
-  margin-bottom: 10px;
+:host.is-first {
+  border: 2px solid black;
 }
-
-p {
-  margin: 0;
-  font-size: 1.2em;
+:host.album {
+  border-color: #e55959;
+  background-color: #fff0f0;
+  #tags-list li {
+    background-color: #f37d7d;
+  }
 }
-p:not(:last-of-type) {
-  margin-bottom: 5px;
+:host.single {
+  border-color: #267200;
+  background-color: #f0fff0;
+  #tags-list li {
+    background-color: #97d292;
+  }
 }
-
-p.error {
-  background-color: #d52626;
-  padding: 30px;
-  margin-bottom: 8px;
-  font-family: "Arial Black";
+:host.no-type {
+  border-color: #001fb9;
+  background-color: #f0f3ff;
+  #tags-list li {
+    background-color: #7d91f3;
+  }
 }

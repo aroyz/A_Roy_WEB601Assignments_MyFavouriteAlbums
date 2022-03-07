@@ -1,0 +1,24 @@
+<form #album="ngForm" (ngSubmit)="onSubmit(album)">
+    <label for="id">ID: </label>
+    <input id="id" name="id" type="text" ngModel required />
+    <br />
+    <label for="title">Title: </label>
+    <input id="title" name="title" type="text" ngModel required />
+    <br />
+    <label for="description">Description: </label>
+    <input id="description" name="description" type="text" ngModel required />
+    <br />
+    <label for="creator">Creator: </label>
+    <input id="creator" name="creator" type="text" ngModel required />
+    <br />
+    <label for="imgURL">Cover Image URL: </label>
+    <input id="imgURL" name="imgURL" type="text" ngModel />
+    <br />
+    <label for="type">Type: </label>
+    <input id="type" name="type" type="text" ngModel />
+    <br />
+    <label for="tags">Tags (separated by commas): </label>
+    <input id="tags" name="tags" type="text" ngModel />
+    <br />
+    <input type="submit" value="Add Music" />
+</form>

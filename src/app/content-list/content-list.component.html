@@ -1,0 +1,18 @@
+<div id="input-div">
+  <h1>Search Albums</h1>
+  <input #albumName><button (click)="searchEvent(albumName.value)">Search</button>
+  <p *ngIf="searchMsg" [ngClass]="getClass(searchMsg)" id="searchMsg">{{ searchMsg }}</p>
+</div>
+
+<h1>Add Music</h1>
+<app-create-content (newContentEvent)="addToContentList($event)"></app-create-content>
+
+<h1>Albums</h1>
+<app-content-card appHoverAffect class="album" *ngFor="let item of (contentList | contentTypeFilter: 'Album'); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+
+<h1>Singles</h1>
+<app-content-card appHoverAffect class="single" *ngFor="let item of (contentList | contentTypeFilter: 'Single'); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+
+<h1>No Type</h1>
+<app-content-card appHoverAffect class="no-type" *ngFor="let item of (contentList | contentTypeFilter); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+
