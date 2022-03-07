@@ -1,15 +1,15 @@
-<form #album="ngForm" (ngSubmit)="onSubmit(album)">
+<form #album="ngForm" (ngSubmit)="onSubmit(album)" name="content">
     <label for="id">ID: </label>
-    <input id="id" name="id" type="text" ngModel required />
+    <input id="id" name="id" type="text" ngModel ng-required="true" />
     <br />
     <label for="title">Title: </label>
-    <input id="title" name="title" type="text" ngModel required />
+    <input id="title" name="title" type="text" ngModel ng-required="true" />
     <br />
     <label for="description">Description: </label>
-    <input id="description" name="description" type="text" ngModel required />
+    <input id="description" name="description" type="text" ngModel ng-required="true" />
     <br />
     <label for="creator">Creator: </label>
-    <input id="creator" name="creator" type="text" ngModel required />
+    <input id="creator" name="creator" type="text" ngModel ng-required="true" />
     <br />
     <label for="imgURL">Cover Image URL: </label>
     <input id="imgURL" name="imgURL" type="text" ngModel />
@@ -20,5 +20,5 @@
     <label for="tags">Tags (separated by commas): </label>
     <input id="tags" name="tags" type="text" ngModel />
     <br />
-    <input type="submit" value="Add Music" />
+    <input type="submit" value="Add Music" ng-disabled="content.$invalid" />
 </form>

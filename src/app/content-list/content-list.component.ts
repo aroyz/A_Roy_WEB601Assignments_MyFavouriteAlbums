@@ -97,7 +97,8 @@ export class ContentListComponent implements OnInit {
       }
   }
 
-  addToContentList (newContent: Content) {
+  addToContentList (newContent : Content) {
+
     this.contentList.push(newContent);
     this.contentList = [...this.contentList];
     console.log(this.contentList);
