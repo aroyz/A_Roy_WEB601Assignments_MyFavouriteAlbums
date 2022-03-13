@@ -1,4 +1,8 @@
-
+<div id="input-div">
+  <h1>Change Album of the Week</h1>
+  <input type="number" #musicId /><button (click)="searchEvent(musicId.value)">Search</button>
+  <p *ngIf="notFoundMessage" id="notFoundMessage">{{ notFoundMessage }}</p>
+</div>
 <div>
   <h1 *ngIf="topContent">Album of the Week</h1>
   <app-content-card appHoverAffect *ngIf="topContent" [content]="topContent" class="is-first top-content"></app-content-card>
