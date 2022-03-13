@@ -21,12 +21,12 @@ export class ContentListComponent implements OnInit {
     this.musicService.getContent().subscribe({
       next: ((content) => { this.contentList = content }),
       error: ((error) => { this.newMessageEvent.emit(error) }),
-      complete: (() => {this.newMessageEvent.emit("Content Item at id: 5")})
+      complete: (() => {this.newMessageEvent.emit("Content array loaded!")})
     });
     this.musicService.getSingleContent(5).subscribe({
         next: ((content) => { if(content) {this.topContent = content} }),
         error: ((error) => { this.newMessageEvent.emit(error) }),
-        complete: (() => { this.newMessageEvent.emit("Content array loaded!") })
+        complete: (() => { this.newMessageEvent.emit("Content Item at id: 5") })
       });
   }
 

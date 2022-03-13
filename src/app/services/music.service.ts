@@ -14,14 +14,8 @@ export class MusicService {
     return of(contentDb);
   }
 
-  getSingleContent(id : number) : Observable<Content | null> {
-    let singleContent = contentDb.find(c => c.id === id);
-    if (singleContent) {
-      return of(singleContent);
-    }
-    else {
-      return of(null);
-    }
+  getSingleContent(id : number) : Observable<Content | undefined> {
+    return of(contentDb.find(c => c.id === id))
   }
 
 }
