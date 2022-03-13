@@ -42,6 +42,7 @@ export class AppComponent implements OnInit {
     }
     else {
       this.notFoundMessage = 'There is no music with that Id. Please try again.';
+      this.messageService.add(`There is no music with that Id. Please try again.`);
     }
   }
 }
