@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import { Observable, of } from "rxjs";
 import { Content } from "../helper-files/content-interface";
 import { MusicService } from "../services/music.service";
@@ -10,6 +10,7 @@ import { MusicService } from "../services/music.service";
 })
 export class ContentListComponent implements OnInit {
 
+  @Output() newMessageEvent = new EventEmitter<string>();
   contentList: Content[] = [];
   topContent?: Content;
   searchMsg: string = '';
@@ -17,8 +18,16 @@ export class ContentListComponent implements OnInit {
   constructor(private musicService: MusicService) {  }
 
   ngOnInit(): void {
-    this.musicService.getContent().subscribe(content => this.contentList = content);
-    this.musicService.getSingleContent(5).subscribe(content => { if(content) {this.topContent = content} });
+    this.musicService.getContent().subscribe({
+      next: ((content) => { this.contentList = content }),
+      error: ((error) => { this.newMessageEvent.emit(error) }),
+      complete: (() => {this.newMessageEvent.emit("Content Item at id: 5")})
+    });
+    this.musicService.getSingleContent(5).subscribe({
+        next: ((content) => { if(content) {this.topContent = content} }),
+        error: ((error) => { this.newMessageEvent.emit(error) }),
+        complete: (() => { this.newMessageEvent.emit("Content array loaded!") })
+      });
   }
 
   searchEvent(contentTitle: string) {
