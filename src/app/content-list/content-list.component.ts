@@ -12,7 +12,6 @@ export class ContentListComponent implements OnInit {
 
   @Output() newMessageEvent = new EventEmitter<string>();
   contentList: Content[] = [];
-  topContent?: Content;
   searchMsg: string = '';
 
   constructor(private musicService: MusicService) {  }
@@ -23,11 +22,6 @@ export class ContentListComponent implements OnInit {
       error: ((error) => { this.newMessageEvent.emit(error) }),
       complete: (() => {this.newMessageEvent.emit("Content array loaded!")})
     });
-    this.musicService.getSingleContent(5).subscribe({
-        next: ((content) => { if(content) {this.topContent = content} }),
-        error: ((error) => { this.newMessageEvent.emit(error) }),
-        complete: (() => { this.newMessageEvent.emit("Content Item at id: 5") })
-      });
   }
 
   searchEvent(contentTitle: string) {

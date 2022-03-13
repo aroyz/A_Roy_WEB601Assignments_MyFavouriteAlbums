@@ -1,2 +1,8 @@
+
+<div>
+  <h1 *ngIf="topContent">Album of the Week</h1>
+  <app-content-card appHoverAffect *ngIf="topContent" [content]="topContent" class="is-first top-content"></app-content-card>
+</div>
+
 <app-content-list (newMessageEvent)="newMessage($event)"></app-content-list>
 <app-messages></app-messages>
