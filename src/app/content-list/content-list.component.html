@@ -4,6 +4,9 @@
   <p *ngIf="searchMsg" [ngClass]="getClass(searchMsg)" id="searchMsg">{{ searchMsg }}</p>
 </div>
 
+<h1>Album of the Week</h1>
+<app-content-card appHoverAffect *ngIf="topContent" [content]="topContent" class="is-first top-content"></app-content-card>
+
 <h1>Albums</h1>
 <app-content-card appHoverAffect class="album" *ngFor="let item of (contentList | contentTypeFilter: 'Album'); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
 
