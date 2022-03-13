@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     this.musicService.getSingleContent(parseInt(id)).subscribe({
       next: ((content) => { this.checkTopContent(content) }),
       error: ((error) => { this.messageService.add(error) }),
-      complete: (() => { this.messageService.add("Content Item at id: 5") })
+      complete: (() => { this.messageService.add(`Content Item at id: ${id}`) })
     });
   }
 
