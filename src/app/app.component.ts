@@ -29,20 +29,17 @@ export class AppComponent implements OnInit {
 
   searchEvent(id : string) {
     this.musicService.getSingleContent(parseInt(id)).subscribe({
-      next: ((content) => { this.checkTopContent(content, parseInt(id)) }),
-      error: ((error) => { this.messageService.add(error) })
+      next: ((content) => { this.searchEventNext(content, parseInt(id)) }),
+      error: ((error) => { this.searchEventError(error) })
     });
   }
-
-  checkTopContent(input : Content | undefined, id : number) {
-    if (input) {
-      this.topContent = input;
-      this.notFoundMessage = '';
-      this.messageService.add(`Content Item at id: ${id}`)
-    }
-    else {
-      this.notFoundMessage = 'There is no music with that Id. Please try again.';
-      this.messageService.add(`There is no music with that Id. Please try again.`);
-    }
+  searchEventNext (input : Content, id : number) {
+    this.topContent = input;
+    this.notFoundMessage = '';
+    this.messageService.add(`Content Item at id: ${id}`)
+  }
+  searchEventError (input : string) {
+    this.notFoundMessage = 'There is no music with that Id. Please try again.';
+    this.messageService.add(`There is no music with that Id. Please try again.`);
   }
 }

@@ -1,0 +1,24 @@
+<h1>Add Music</h1>
+<form #music="ngForm" (ngSubmit)="onSubmit(music)" name="contentForm">
+  <label for="title">Title: * </label>
+  <input id="title" name="title" type="text" ngModel ng-required="true" />
+  <br />
+  <label for="description">Description: * </label>
+  <input id="description" name="description" type="text" ngModel ng-required="true" />
+  <br />
+  <label for="creator">Creator: * </label>
+  <input id="creator" name="creator" type="text" ngModel ng-required="true" />
+  <br />
+  <label for="imgURL">Cover Image URL: </label>
+  <input id="imgURL" name="imgURL" type="text" ngModel />
+  <br />
+  <label for="type">Type: </label>
+  <input id="type" name="type" type="text" ngModel />
+  <br />
+  <label for="tags">Tags (separated by commas): </label>
+  <input id="tags" name="tags" type="text" ngModel />
+  <br />
+  <input id="submit" type="submit" value="Add Music" />
+
+  <p *ngIf="!isValid && isSubmitted">Content failed to be added. Please fill in required fields and try again.</p>
+</form>

@@ -41,4 +41,18 @@ export class ContentListComponent implements OnInit {
         return 'not-found';
       }
   }
+
+  addContentToList (newContentItem : Content) : void {
+    this.musicService.addContent(newContentItem).subscribe({
+      next: ((newContentFromServer) => this.contentList.push(newContentFromServer)),
+      complete: (() => this.contentList = [...this.contentList])
+    });
+    this.newMessageEvent.emit("Music added!");
+    console.log(this.contentList);
+  }
+
+  updateContentInList (contentItem : Content) : void {
+    this.musicService.updateContent(contentItem).subscribe(() => console.log("Content updated successfully"));
+  }
+
 }

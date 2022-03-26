@@ -1,3 +1,5 @@
+<app-modify-content (newContentEvent)="addContentToList($event)"></app-modify-content>
+
 <div id="input-div">
   <h1>Search Albums</h1>
   <input #albumName><button (click)="searchEvent(albumName.value)">Search</button>

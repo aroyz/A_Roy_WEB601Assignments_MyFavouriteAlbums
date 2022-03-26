@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  *:not(h1) {
+    display: inline-block;
+  }
+  label {
+    margin-bottom: 15px;
+  }
+  input:not(#submit) {
+    margin-left: 10px;
+  }
+  input {
+    padding: 5px 10px;
+  }
+}
