@@ -14,11 +14,11 @@
 
 <div id="content-cards">
   <h1>Albums</h1>
-  <app-content-card appHoverAffect class="album" *ngFor="let item of (contentList | contentTypeFilter: 'Album'); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+  <app-content-card class="album" *ngFor="let item of (contentList | contentTypeFilter: 'Album'); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
 
   <h1>Singles</h1>
-  <app-content-card appHoverAffect class="single" *ngFor="let item of (contentList | contentTypeFilter: 'Single'); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+  <app-content-card class="single" *ngFor="let item of (contentList | contentTypeFilter: 'Single'); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
 
   <h1>No Type</h1>
-  <app-content-card appHoverAffect class="no-type" *ngFor="let item of (contentList | contentTypeFilter); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
+  <app-content-card class="no-type" *ngFor="let item of (contentList | contentTypeFilter); first as isFirst" [content]="item" [class.is-first]="isFirst"></app-content-card>
 </div>

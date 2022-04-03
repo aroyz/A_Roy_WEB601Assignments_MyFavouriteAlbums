@@ -1,19 +1,12 @@
 :host {
-  display: block;
-  max-width: 800px;
-  margin: 20px auto;
-  border: 1px dashed black;
-  padding: 30px;
+  mat-card {
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px dashed black;
+    padding: 30px;
+  }
 
-  h1 {
-    margin-bottom: 8px;
-  }
-  p {
-    margin: 5px 0px 0px;
-  }
-  p.type {
-    display: inline-block;
-  }
   .description {
     font-style: italic;
   }
@@ -29,34 +22,38 @@
   }
   img {
     width: 220px;
+    margin: 0px 0px 16px;
+  }
+  mat-card-header {
+    margin-left: -16px;
   }
 }
 
-:host.is-first {
+:host.is-first mat-card {
   border: 2px solid black;
 }
-:host.album {
+:host.album mat-card {
   border-color: #e55959;
   background-color: #fff0f0;
   #tags-list li {
     background-color: #f37d7d;
   }
 }
-:host.single {
+:host.single mat-card {
   border-color: #267200;
   background-color: #f0fff0;
   #tags-list li {
     background-color: #97d292;
   }
 }
-:host.no-type {
+:host.no-type mat-card {
   border-color: #001fb9;
   background-color: #f0f3ff;
   #tags-list li {
     background-color: #7d91f3;
   }
 }
-:host.top-content {
+:host.top-content mat-card {
   background-color: #d7d7d7;
   box-shadow: 2px 2px 5px #9f9f9f;
   #tags-list li {

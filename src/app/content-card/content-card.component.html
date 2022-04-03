@@ -1,10 +1,18 @@
-<img src="{{content?.imgURL}}" *ngIf="content?.imgURL; else defaultImg" (click)="onClick()" />
-<ng-template #defaultImg><img src="http://dalelyles.com/musicmp3s/no_cover.jpg" /></ng-template>
-<!--<img src="{{content?.imgURL ? content?.imgURL : 'http://dalelyles.com/musicmp3s/no_cover.jpg'}}" (click)="onClick()" />-->
-<h1>{{content?.title}}</h1>
-<p>{{content?.creator}}</p>
-<p class="description">{{content?.description}}</p>
-<p appHoverAffect *ngIf="content?.type" [el]='"type"' class="type">{{content?.type}}</p>
-<ul id="tags-list" *ngIf="content?.tags">
-    <li appHoverAffect *ngFor="let item of content?.tags" [el]='"tag"'>{{item}}</li>
-</ul>
+<mat-card appHoverAffect>
+  <mat-card-header>
+    <mat-card-title>{{content?.title}}</mat-card-title>
+    <mat-card-subtitle>{{content?.creator}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image src="{{content?.imgURL}}" *ngIf="content?.imgURL; else defaultImg" (click)="onClick()" />
+  <ng-template #defaultImg><img mat-card-image src="http://dalelyles.com/musicmp3s/no_cover.jpg" /></ng-template>
+
+  <mat-card-content>
+    <p appHoverAffect *ngIf="content?.type" [el]='"type"' class="type">{{content?.type}}</p>
+    <p class="description">{{content?.description}}</p>
+    <ul id="tags-list" *ngIf="content?.tags">
+      <li appHoverAffect *ngFor="let item of content?.tags" [el]='"tag"'>{{item}}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+
