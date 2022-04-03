@@ -15,6 +15,8 @@ import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
+import { MatDialogModule } from "@angular/material/dialog";
+import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { MatInputModule } from "@angular/material/input";
     ContentTypeFilterPipe,
     HoverAffectDirective,
     MessagesComponent,
-    ModifyContentComponent
+    ModifyContentComponent,
+    AddContentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { MatInputModule } from "@angular/material/input";
     }),
     BrowserAnimationsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

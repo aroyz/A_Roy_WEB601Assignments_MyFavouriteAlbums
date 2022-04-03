@@ -1,0 +1,36 @@
+<h1>Add Music</h1>
+<form #music="ngForm" (ngSubmit)="onSubmit(music)" name="contentForm">
+  <mat-form-field appearance="fill">
+    <mat-label for="title">Title: * </mat-label>
+    <input matInput id="title" name="title" type="text" ngModel ng-required="true" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label for="description">Description: * </mat-label>
+    <textarea matInput id="description" name="description" ngModel ng-required="true"></textarea>
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label for="creator">Creator: * </mat-label>
+    <input matInput id="creator" name="creator" type="text" ngModel ng-required="true" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label for="imgURL">Cover Image URL: </mat-label>
+    <input matInput id="imgURL" name="imgURL" type="text" ngModel />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label for="type">Type: </mat-label>
+    <input matInput id="type" name="type" type="text" ngModel />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label for="tags">Tags (separated by commas): </mat-label>
+    <input matInput id="tags" name="tags" type="text" ngModel />
+  </mat-form-field>
+  <br />
+  <button mat-raised-button color="primary" id="submit" type="submit" value="Add Music">Add Music</button>
+  <p *ngIf="!isValid && isSubmitted">Content failed to be added. Please fill in required fields and try again.</p>
+</form>
+

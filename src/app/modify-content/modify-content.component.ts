@@ -9,31 +9,13 @@ import {Content} from "../helper-files/content-interface";
 })
 export class ModifyContentComponent implements OnInit {
   @Output() newContentEvent = new EventEmitter<Content>();
-  contentItem? : [];
-  isValid = false;
-  isSubmitted = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(content : NgForm) {
-    this.isSubmitted = true;
-
-    if (content.value.title && content.value.description && content.value.creator) {
-      this.isValid = true;
-      Object.keys(content.value).forEach((key : any) => {
-        if (!content.value[key]) {
-          delete content.value[key];
-        }
-      });
-      if (content.value.tags) {content.value.tags = content.value.tags.split(',');}
-      this.newContentEvent.emit(content.value);
-      content.resetForm();
-    }
-    else {
-      this.isValid = false;
-    }
+  emitContent (content : Content) {
+    this.newContentEvent.emit(content);
   }
 }
