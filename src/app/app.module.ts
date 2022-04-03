@@ -19,6 +19,8 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
 import { MatCardModule } from "@angular/material/card";
 import { MatDividerModule } from "@angular/material/divider";
+import { MatChipsModule } from "@angular/material/chips";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { MatDividerModule } from "@angular/material/divider";
     MatInputModule,
     MatDialogModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatChipsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],

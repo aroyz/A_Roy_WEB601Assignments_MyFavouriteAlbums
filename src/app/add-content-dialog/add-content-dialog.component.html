@@ -32,11 +32,22 @@
     </mat-form-field>
     <br />
     <mat-form-field appearance="fill">
-      <mat-label for="tags">Tags (separated by commas): </mat-label>
-      <input matInput id="tags" name="tags" type="text" ngModel />
+      <mat-label for="tags">Tags</mat-label>
+      <mat-chip-list #tagList aria-label="tag list">
+        <mat-chip *ngFor="let tag of tags" (removed)="remove(tag)">
+          {{tag}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input matInput name="tags" type="text" placeholder="Add tags..."
+               [matChipInputFor]="tagList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
     </mat-form-field>
     <br />
-<!--    <button mat-raised-button color="primary" id="submit" type="submit" value="Add Music">Add Music</button>-->
     <p *ngIf="!isValid && isSubmitted">Content failed to be added. Please fill in required fields and try again.</p>
   </form>
 </mat-dialog-content>
