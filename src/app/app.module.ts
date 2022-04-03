@@ -43,6 +43,7 @@ import { AddContentDialogComponent } from './add-content-dialog/add-content-dial
     MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddContentDialogComponent]
 })
 export class AppModule { }
