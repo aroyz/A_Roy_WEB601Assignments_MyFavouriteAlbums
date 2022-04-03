@@ -3,16 +3,11 @@
   max-width: 800px;
   margin: 40px auto;
   padding: 30px;
-  *:not(h1) {
-    display: inline-block;
+  mat-form-field {
+    width: 400px;
   }
-  label {
-    margin-bottom: 15px;
-  }
-  input:not(#submit) {
-    margin-left: 10px;
-  }
-  input {
-    padding: 5px 10px;
+  form button {
+    height: 52px;
+    padding: 0 30px;
   }
 }

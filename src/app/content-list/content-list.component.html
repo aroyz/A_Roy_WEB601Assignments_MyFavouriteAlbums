@@ -1,8 +1,14 @@
 <app-modify-content (newContentEvent)="addContentToList($event)"></app-modify-content>
 
 <div id="input-div">
-  <h1>Search Albums</h1>
-  <input #albumName><button (click)="searchEvent(albumName.value)">Search</button>
+  <h1>Search Music</h1>
+  <div id="inner-input-div">
+    <mat-form-field appearance="fill">
+      <mat-label>Search Music</mat-label>
+      <input matInput #albumName>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="searchEvent(albumName.value)">Search</button>
+  </div>
   <p *ngIf="searchMsg" [ngClass]="getClass(searchMsg)" id="searchMsg">{{ searchMsg }}</p>
 </div>
 
