@@ -18,6 +18,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatDialogModule } from "@angular/material/dialog";
 import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
 import { MatCardModule } from "@angular/material/card";
+import { MatDividerModule } from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MatCardModule } from "@angular/material/card";
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

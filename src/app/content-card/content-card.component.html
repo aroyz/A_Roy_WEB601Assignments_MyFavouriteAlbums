@@ -4,6 +4,8 @@
     <mat-card-subtitle>{{content?.creator}}</mat-card-subtitle>
   </mat-card-header>
 
+  <mat-divider></mat-divider>
+
   <img mat-card-image src="{{content?.imgURL}}" *ngIf="content?.imgURL; else defaultImg" (click)="onClick()" />
   <ng-template #defaultImg><img mat-card-image src="http://dalelyles.com/musicmp3s/no_cover.jpg" /></ng-template>
 
