@@ -20,7 +20,7 @@ export class ContentDetailComponent implements OnInit {
       this.id = +(params.get('id') ?? 0);
       this.musicService.getSingleContent(this.id).subscribe((c) => {
         this.content = c;
-        this.messageService.add("Loaded content at id " + this.id);
+        this.messageService.add("Loaded content at id " + this.id + " with title " + this.content.title);
       });
     });
   }

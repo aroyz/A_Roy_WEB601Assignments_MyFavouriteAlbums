@@ -44,7 +44,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
-      delay: 1000,
+      delay: 0,
     }),
     BrowserAnimationsModule,
     MatButtonModule,
