@@ -16,16 +16,16 @@ export class AppComponent implements OnInit {
   constructor(private messageService : MessageService, private musicService : MusicService) {  }
 
   ngOnInit() {
-    this.musicService.getSingleContent(5).subscribe({
-      next: ((content) => { if(content) {this.topContent = content} }),
-      error: ((error) => { this.messageService.add(error) }),
-      complete: (() => { this.messageService.add("Content Item at id: 5") })
-    });
+    // this.musicService.getSingleContent(5).subscribe({
+    //   next: ((content) => { if(content) {this.topContent = content} }),
+    //   error: ((error) => { this.messageService.add(error) }),
+    //   complete: (() => { this.messageService.add("Content Item at id: 5") })
+    // });
   }
 
-  newMessage(newMessage : string) {
-    this.messageService.add(newMessage);
-  }
+  // newMessage(newMessage : string) {
+  //   this.messageService.add(newMessage);
+  // }
 
   searchEvent(id : string) {
     this.musicService.getSingleContent(parseInt(id)).subscribe({

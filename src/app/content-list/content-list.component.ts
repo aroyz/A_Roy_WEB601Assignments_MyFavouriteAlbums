@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output, ViewEncapsulation} from '@angul
 import { Observable, of } from "rxjs";
 import { Content } from "../helper-files/content-interface";
 import { MusicService } from "../services/music.service";
+import { MessageService } from "../services/message.service";
 
 @Component({
   selector: 'app-content-list',
@@ -10,17 +11,17 @@ import { MusicService } from "../services/music.service";
 })
 export class ContentListComponent implements OnInit {
 
-  @Output() newMessageEvent = new EventEmitter<string>();
+  // @Output() newMessageEvent = new EventEmitter<string>();
   contentList: Content[] = [];
   searchMsg: string = '';
 
-  constructor(private musicService: MusicService) {  }
+  constructor(private musicService: MusicService, private messageService : MessageService) {  }
 
   ngOnInit(): void {
     this.musicService.getContent().subscribe({
       next: ((content) => { this.contentList = content }),
-      error: ((error) => { this.newMessageEvent.emit(error) }),
-      complete: (() => {this.newMessageEvent.emit("Content array loaded!")})
+      error: ((error) => { this.messageService.add(error) }),
+      complete: (() => {this.messageService.add("Content array loaded!")})
     });
   }
 
@@ -47,7 +48,7 @@ export class ContentListComponent implements OnInit {
       next: ((newContentFromServer) => this.contentList.push(newContentFromServer)),
       complete: (() => this.contentList = [...this.contentList])
     });
-    this.newMessageEvent.emit("Music added!");
+    this.messageService.add("Music added!");
     console.log(this.contentList);
   }
 
