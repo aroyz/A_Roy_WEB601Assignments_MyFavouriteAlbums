@@ -1,18 +1,11 @@
-<div id="input-div">
-  <h1>Change Album of the Week</h1>
-  <div id="inner-input-div">
-    <mat-form-field appearance="fill">
-      <mat-label>Enter ID</mat-label>
-      <input matInput type="number" #musicId />
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="searchEvent(musicId.value)">Search</button>
-  </div>
-  <p *ngIf="notFoundMessage" id="notFoundMessage">{{ notFoundMessage }}</p>
-</div>
-<div>
-  <h1 *ngIf="topContent">Album of the Week</h1>
-  <app-content-card appHoverAffect *ngIf="topContent" [content]="topContent" class="is-first top-content"></app-content-card>
-</div>
+<a routerLink="list" routerLinkActive="active"
+   [routerLinkActiveOptions]="{ exact: true }">
+  Content List
+</a><br />
+<a routerLink="pagewillnotbefound" routerLinkActive="active">
+  Invalid page link
+</a><br />
 
-<app-content-list (newMessageEvent)="newMessage($event)"></app-content-list>
+<router-outlet></router-outlet>
+
 <app-messages></app-messages>
