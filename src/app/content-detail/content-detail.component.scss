@@ -20,12 +20,13 @@
   }
   p {
     font-size: 1.5em;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
   }
   #tags-list {
     padding: 0px;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
   }
   #tags-list li {
     font-size: 1.2em;
