@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MessageService} from "./services/message.service";
 import {MusicService} from "./services/music.service";
 import {Content} from "./helper-files/content-interface";
+import {LogUpdateService} from "./services/log-update.service";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
   topContent?: Content;
   notFoundMessage?: string;
 
-  constructor(private messageService : MessageService, private musicService : MusicService) {  }
+  constructor(private messageService : MessageService, private musicService : MusicService, private logService: LogUpdateService) {  }
 
   ngOnInit() {
     // this.musicService.getSingleContent(5).subscribe({
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit {
     //   error: ((error) => { this.messageService.add(error) }),
     //   complete: (() => { this.messageService.add("Content Item at id: 5") })
     // });
+    this.logService.init();
   }
 
   // newMessage(newMessage : string) {

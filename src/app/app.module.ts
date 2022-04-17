@@ -21,6 +21,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatChipsModule } from "@angular/material/chips";
 import { MatIconModule } from "@angular/material/icon";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AppRoutingModule } from "./app-routing.module";
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -56,6 +57,7 @@ import { environment } from '../environments/environment';
     MatDividerModule,
     MatChipsModule,
     MatIconModule,
+    MatSnackBarModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
