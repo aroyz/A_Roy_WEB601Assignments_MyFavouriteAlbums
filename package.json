@@ -1,6 +1,6 @@
 {
   "name": "a-roy-my-favourite-albums",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "http-server -p 8080 -c-1 dist/a-roy-my-favourite-albums",
